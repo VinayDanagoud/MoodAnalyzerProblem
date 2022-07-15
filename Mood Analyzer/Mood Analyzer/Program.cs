@@ -9,7 +9,8 @@ namespace MoodAnalyzer
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Mood Analyser:");
+            MoodAnalyzer moodAnalyzer = new MoodAnalyzer("I am happy");
+            moodAnalyzer.AnalyzeMood();
         }
     }
 }

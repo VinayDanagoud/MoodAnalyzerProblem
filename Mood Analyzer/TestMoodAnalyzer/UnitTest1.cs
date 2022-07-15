@@ -5,30 +5,21 @@ namespace MoodAnalyzer
     [TestClass]
     public class UnitTest1
     {
-        //Arrangement
-        MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
-
         [TestMethod]
-        public void CheckMoodHappy()
+        [TestCategory("null case")]
+        public void GivenNullReturnHappyMood()
         {
-            //Action
+            ///AAA methodology
+            ///arrange
+            string message = null;
+            string expected = "happy";
+            MoodAnalyzer moodAnalyzer = new MoodAnalyzer(message);
 
-            string res = moodAnalyzer.CheckMood("Vinay  is Happy for his new Bike");
+            //Act
+            string Actual = moodAnalyzer.AnalyzeMood();
 
             //Assert
-
-            Assert.AreEqual("happy", res);
-        }
-        [TestMethod]
-        public void CheckMoodSad()
-        {
-            //Action
-
-            string res = moodAnalyzer.CheckMood("Akash is Sad after getting  fail in exam");
-
-            //Assert
-
-            Assert.AreEqual("sad", res);
+            Assert.AreEqual(expected, Actual);
         }
     }
 }
